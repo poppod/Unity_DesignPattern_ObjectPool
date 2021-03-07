@@ -23,7 +23,7 @@ public class ObjectSpawn : MonoBehaviour
             Ray  ray =Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit)) {
-                // Vector3 pos= new Vector3(hit.transform.position.x,mousePos.y,hit.transform.position.z);
+                
                 GameObject newOject=m_PoolObjects.GetObjectFromPool();
                 newOject.transform.position=new Vector3(hit.point.x,2,hit.point.z);
                 StartCoroutine(DelayForDisable(newOject));
